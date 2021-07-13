@@ -22,8 +22,6 @@ public class Phone {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @ManyToOne
-    private Person person;
     private PhoneType type;
     private String number;
 }
