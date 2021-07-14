@@ -1,8 +1,12 @@
-## People API
+## People API - Developed with Java and SpringBoot
 
 This project was created with studies intention, during a live coding of DIO.
 
-For start this project is necessary have the Java 11.
+For start this project is necessary have the Java 11 and Maven 3.6.3 or more.
+
+### For run this project:
+
+> mvn spring-boot:run
 
 ### Endpoints:
 
