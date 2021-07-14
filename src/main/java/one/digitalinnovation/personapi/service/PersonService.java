@@ -1,6 +1,7 @@
 package one.digitalinnovation.personapi.service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -33,7 +34,14 @@ public class PersonService {
                 .build();
     }
 
-    public List<Person> getPersonList() {
+    public List<PersonDTO> listAll() {
+        List<Person> allPeople= personRepository.findAll();
+        return allPeople.stream()
+                        .map(personMapper::toDTO)
+                        .collect(Collectors.toList());
+    }
+
+/*     public List<Person> getPersonList() {
         List<Person> personList = personRepository.findAll();
         return personList;
     }
@@ -61,5 +69,5 @@ public class PersonService {
     public Person updatePerson(Person person) {
         Person personUpdated = personRepository.save(person);
         return personUpdated;
-    }
+    } */
 }
