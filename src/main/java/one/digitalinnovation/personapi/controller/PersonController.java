@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import one.digitalinnovation.personapi.dto.MessageResponseDTO;
 import one.digitalinnovation.personapi.dto.request.PersonDTO;
-import one.digitalinnovation.personapi.entity.Person;
 import one.digitalinnovation.personapi.service.PersonService;
 
 @RestController
