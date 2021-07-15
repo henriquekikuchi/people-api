@@ -1,7 +1,10 @@
 package one.digitalinnovation.personapi.service;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
+
+import java.util.Optional;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -13,8 +16,9 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import one.digitalinnovation.personapi.dto.MessageResponseDTO;
 import one.digitalinnovation.personapi.dto.request.PersonDTO;
 import one.digitalinnovation.personapi.entity.Person;
+import one.digitalinnovation.personapi.exception.PersonNotFoundException;
+import one.digitalinnovation.personapi.mapper.PersonMapper;
 import one.digitalinnovation.personapi.repository.PersonRepository;
-import one.digitalinnovation.personapi.service.PersonService;
 import one.digitalinnovation.personapi.utils.PersonUtils;
 
 @ExtendWith(MockitoExtension.class)
@@ -22,6 +26,9 @@ public class PersonServiceTest {
     
     @Mock
     private PersonRepository personRepository;
+
+    @Mock
+    private PersonMapper personMapper;
 
     @InjectMocks
     private PersonService personService;
